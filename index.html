@@ -7,13 +7,14 @@
   <title>DOM Tutor</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
+  <script src="./scripts/open-in-hixie.js"></script>
   <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
 
   <link rel="stylesheet" href="style.css">
 
   <script>
     window.onload = () => {
-      const editor = ace.edit(document.getElementById('editor'));
+      window.editor = ace.edit(document.getElementById('editor'));
 
       editor.setTheme('ace/theme/twilight');
       editor.setFontSize(15);
@@ -50,7 +51,10 @@
 
 <body>
 
-  <p class='intro'>Psst. Open your inspector</p>
+  <header>
+    <button onclick='openInHixie()'>Open snippet in Live DOM Viewer</button>
+    <p>(Psst. Open your inspector)</p>
+  </header>
 
   <div class='study-stuff'>
     <div id='editor'></div>

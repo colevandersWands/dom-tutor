@@ -1,5 +1,7 @@
-.intro {
-  padding-left: 10%;
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .study-stuff {
