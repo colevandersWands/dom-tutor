@@ -7,44 +7,15 @@
   <title>DOM Tutor</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
+  <script src="./scripts/init.js"></script>
   <script src="./scripts/open-in-hixie.js"></script>
+  <script src="./scripts/set-query-snippet.js"></script>
   <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
 
   <link rel="stylesheet" href="style.css">
 
   <script>
-    window.onload = () => {
-      window.editor = ace.edit(document.getElementById('editor'));
-
-      editor.setTheme('ace/theme/twilight');
-      editor.setFontSize(15);
-      editor.getSession().setMode('ace/mode/html');
-      editor.getSession().setTabSize(2);
-      editor.setValue(`<style>
-  table, th, td {
-    border: 1px solid black;
-  }
-</style>
-
-<h2>tables are not as they appear</h2>
-<table>
-  <tr>
-    <td>the html</td>
-    <td>does not</td>
-  </tr>
-  <tr>
-    <td>match the</td>
-    <td>DOM</td>
-  </tr>
-</table>`);
-
-      const outputDiv = document.getElementById('output');
-
-      outputDiv.innerHTML = editor.getValue();
-      editor.on("change", (e) => {
-        outputDiv.innerHTML = editor.getValue();
-      });
-    }
+    window.onload = init;
   </script>
 
 </head>
