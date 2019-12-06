@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>DOM Tutor</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    window.onload = () => {
+      const editor = ace.edit(document.getElementById('editor'));
+
+      editor.setTheme('ace/theme/twilight');
+      editor.setFontSize(15);
+      editor.getSession().setMode('ace/mode/html');
+      editor.getSession().setTabSize(2);
+      editor.setValue(`<style>
+  table, th, td {
+    border: 1px solid black;
+  }
+</style>
+
+<h2>tables are not as they appear</h2>
+<table>
+  <tr>
+    <td>the html</td>
+    <td>does not</td>
+  </tr>
+  <tr>
+    <td>match the</td>
+    <td>DOM</td>
+  </tr>
+</table>`);
+
+      const outputDiv = document.getElementById('output');
+
+      outputDiv.innerHTML = editor.getValue();
+      editor.on("change", (e) => {
+        outputDiv.innerHTML = editor.getValue();
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <p>
+    Psst. Open your inspector
+  </p>
+
+  <div class='study-stuff'>
+    <div id='editor'></div>
+    <div id='output'></div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+.study-stuff {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+#editor {
+ width: 55%;
+ height: 100%;
+}
+
+#output {
+  border: solid;
+  width: 45%;
+  height: 100%;
+  padding: 2%;
+}
+
+
+
+
