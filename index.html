@@ -8,6 +8,7 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 
   <script src="./scripts/init.js"></script>
+  <script src="./scripts/load.js"></script>
   <script src="./scripts/open-in-hixie.js"></script>
   <script src="./scripts/set-query-snippet.js"></script>
   <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
@@ -21,17 +22,22 @@
 </head>
 
 <body>
-
   <header>
     <button onclick='openInHixie()'>Open snippet in Live DOM Viewer</button>
-    <p>(Psst. Open your inspector)</p>
+    <p>(Psst. Inspect the output)</p>
     <details>
-      <summary>Looking for more like this?</summary>
+      <summary>Examples to study:</summary>
+      <button onclick='load("./examples/tables.html")'>tables</button>
+      <button onclick='load("./examples/above-below.html")'>above, below</button>
+      <button onclick='load("./examples/css-selectors.html")'>CSS selectors</button>
+    </details>
+    <details>
+      <summary>DOM Readings:</summary>
       <a href='http://hackyourfuture.be/inspecting-the-dom/' target='_blank'>
-        <button>Examples to Study</button>
+        <button>Inspecting the DOM</button>
       </a>
       <a href='https://dom-tutorials.appspot.com/static/index.html' target='_blank'>
-        <button>An Embedded DOM Tutorial</button>
+        <button>Embedded DOM Tutorial</button>
       </a>
     </details>
   </header>
@@ -40,7 +46,7 @@
     <div id='editor-container'>
       <div id='editor'></div>
     </div>
-    <div id='output'></div>
+    <iframe id='output'></iframe>
   </div>
 
   <hr>

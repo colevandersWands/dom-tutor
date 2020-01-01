@@ -1,28 +1,16 @@
-const init = () => {
-
-  const fallback = `<style>
-  table, th, td {
-    border: 1px solid black;
-  }
-</style>
-
-<h2>tables are not as they appear</h2>
-<table>
-  <tr>
-    <td>the html</td>
-    <td>does not</td>
-  </tr>
-  <tr>
-    <td>match the</td>
-    <td>DOM</td>
-  </tr>
-</table>`;
+const init = async () => {
 
   const urlString = window.location.href;
   const url = new URL(urlString);
   const snippet = url.searchParams.get("snippet");
 
-  const code = snippet ? snippet : fallback;
+  const path = './examples/above-below.html';
+
+  const starterCode = snippet
+    ? snippet
+    : await fetch(path)
+      .then(res => res.text())
+      .catch(err => err.message);
 
   window.editor = ace.edit(document.getElementById('editor'));
 
@@ -30,14 +18,16 @@ const init = () => {
   editor.setFontSize(15);
   editor.getSession().setMode('ace/mode/html');
   editor.getSession().setTabSize(2);
-  editor.setValue(code);
+  editor.setValue(starterCode);
 
-  const outputDiv = document.getElementById('output');
+  const outputEl = document.getElementById('output');
+  outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(starterCode);
 
-  outputDiv.innerHTML = editor.getValue();
+  setQuerySnippet(starterCode)
+
   editor.on("change", (e) => {
     const code = editor.getValue()
     setQuerySnippet(code)
-    outputDiv.innerHTML = code;
+    outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(code);
   });
 }

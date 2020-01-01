@@ -12,14 +12,14 @@ header {
 }
 
 #editor {
- width: 55%;
- height: 100%;
+ width: 55vw;
+ height: 100vh;
 }
 
 #output {
-  border: solid;
-  width: 45%;
-  height: 92%;
+  border: solid 2px;
+  width: 45vw;
+  height: 94vh;
   padding: 2%;
 }
 

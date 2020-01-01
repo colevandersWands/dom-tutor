@@ -1,0 +1,1 @@
+separate html & css editors, with relevant changes to permalink
