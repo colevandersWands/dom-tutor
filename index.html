@@ -10,6 +10,7 @@
   <script src="./scripts/init.js"></script>
   <script src="./scripts/load.js"></script>
   <script src="./scripts/open-in-hixie.js"></script>
+  <script src="./scripts/open-in-new-tab.js"></script>
   <script src="./scripts/set-query-snippet.js"></script>
   <script src="./ace/ace.js" type="text/javascript" charset="utf-8"></script>
 
@@ -23,8 +24,9 @@
 
 <body>
   <header>
-    <button onclick='openInHixie()'>Open snippet in Live DOM Viewer</button>
-    <p>(Psst. Inspect the output)</p>
+    <button onclick='openInHixie()'>Open in Live DOM Viewer</button>
+    <button onclick='openInNewTab()'>Open in new tab</button>
+    <p>(Psst. Open your inspector!)</p>
     <details>
       <summary>Examples to study:</summary>
       <button onclick='load("./examples/tables.html")'>tables</button>
