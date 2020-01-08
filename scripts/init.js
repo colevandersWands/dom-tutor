@@ -4,7 +4,7 @@ const init = async () => {
   const url = new URL(urlString);
   const snippet = url.searchParams.get("snippet");
 
-  const path = './examples/above-below.html';
+  const path = './examples/html-css/above-below.html';
 
   const starterCode = snippet
     ? snippet
