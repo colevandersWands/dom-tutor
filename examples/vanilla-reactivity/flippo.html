@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>flippo</title>
+
+  <style>
+    textarea {
+      height: 20vh;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="input"></textarea>
+  <hr>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+    document.getElementById('input').onkeyup = (e) => {
+      const input = e.target.value;
+      const reversed = input.split('').reverse().join('');
+      output.innerHTML = reversed;
+    };
+  </script>
+</body>
+
+</html>
