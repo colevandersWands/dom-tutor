@@ -1,6 +1,6 @@
 # [DOM Tutor](https://janke-learning.org/dom-tutor)
 
-A super simple little site to help you understand the DOM one snippet at a time.
+A little site to help you understand the DOM one snippet at a time.
 
 How to use it?
 1. Follow [this link](https://janke-learning.org/dom-tutor) for the live study site.
